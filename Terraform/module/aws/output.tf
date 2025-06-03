@@ -2,17 +2,17 @@ output "fastfood_vpc" {
   value = aws_vpc.fastfood_vpc.id
 }
 
-output "fastfood_subnet_publica_ids" {
+output "fastfood_subnet_public_ids" {
   value = [
-    aws_subnet.fastfood_subnet_publica_1.id,
-    aws_subnet.fastfood_subnet_publica_2.id
+    aws_subnet.fastfood_subnet_public_1.id,
+    aws_subnet.fastfood_subnet_public_2.id
   ]
 }
 
-output "fastfood_subnet_privada_ids" {
+output "fastfood_subnet_private_ids" {
   value = [
-    aws_subnet.fastfood_subnet_privada_1.id,
-    aws_subnet.fastfood_subnet_privada_2.id
+    aws_subnet.fastfood_subnet_private_1.id,
+    aws_subnet.fastfood_subnet_private_2.id
   ]
 }
 
