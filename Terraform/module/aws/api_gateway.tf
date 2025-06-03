@@ -24,3 +24,20 @@ resource "aws_api_gateway_method" "fastfoodapi_method" {
   authorization = "COGNITO_USER_POOLS"
   authorizer_id = aws_api_gateway_authorizer.cognito_authorizer.id
 }
+
+resource "aws_internet_gateway" "fastfood_internet_gateway" {
+  vpc_id = aws_vpc.fastfood_vpc.id
+
+  tags = {
+    Name = "fastfood-internet-gateway"
+  }
+}
+
+resource "aws_nat_gateway" "fastfood_nat_gateway" {
+  allocation_id = aws_eip.fastfood_nat_eip.id
+  subnet_id     = aws_subnet.fastfood_subnet_public_1.id
+
+  tags = {
+    Name = "fastfood-nat-gateway"
+  }
+}
